@@ -4,6 +4,9 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'dart:io';
 import 'pages/poetry_list_page.dart';
+import 'pages/login.dart';
+import 'pages/Route.dart';
+import 'pages/Scenery.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,69 +14,82 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(create: (_) => Counter()),
-      ],
-      child: MaterialApp(
-        title: "Provider example",
-        home: FirstPage(),
+    return MaterialApp(
+      home: SceneryPage(),
+      title: 'Examples',
+      theme: ThemeData(
+        primarySwatch: Colors.orange,
       ),
+      routes: {
+        '/first': (BuildContext context) => FirstPage(),
+        'second': (BuildContext context) => SecondPage(),
+        '/home': (BuildContext context) => MyHomePage(),
+      },
+//      initialRoute: '/first',
     );
+//    return MultiProvider(
+//      providers: [
+//        ChangeNotifierProvider(create: (_) => Counter()),
+//      ],
+//      child: MaterialApp(
+//        title: "Provider example",
+//        home: MyHomePage(),
+//      ),
+//    );
   }
 }
 
-class FirstPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("The First Page"),
-        actions: <Widget>[
-          FlatButton(
-            child: Text("Next"),
-            onPressed: () =>
-              Navigator.push(context, MaterialPageRoute(builder: (context){
-//                return SecondPage();
-                return PoetryListPage();
-              })),
-          ),
-        ],
-      ),
-      body: Center(
-        child: Text("${Provider.of<Counter>(context, listen: false).count}"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Provider.of<Counter>(context, listen: false).increment();
-        },
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class SecondPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("The Second Page"),
-      ),
-      body: Center(
-        child: Text("${Provider.of<Counter>(context, listen: false).count}"),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-          Provider.of<Counter>(context, listen: false).increment();
-        },
-        child: Icon(Icons.add),
-      ),
-    );
-  }
-}
+//class FirstPage extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    // TODO: implement build
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text("The First Page"),
+//        actions: <Widget>[
+//          FlatButton(
+//            child: Text("Next"),
+//            onPressed: () =>
+//              Navigator.push(context, MaterialPageRoute(builder: (context){
+////                return SecondPage();
+//                return LoginPage();
+//              })),
+//          ),
+//        ],
+//      ),
+//      body: Center(
+//        child: Text("${Provider.of<Counter>(context, listen: false).count}"),
+//      ),
+//      floatingActionButton: FloatingActionButton(
+//        onPressed: (){
+//          Provider.of<Counter>(context, listen: false).increment();
+//        },
+//        child: Icon(Icons.add),
+//      ),
+//    );
+//  }
+//}
+//
+//class SecondPage extends StatelessWidget {
+//  @override
+//  Widget build(BuildContext context) {
+//    // TODO: implement build
+//    return Scaffold(
+//      appBar: AppBar(
+//        title: Text("The Second Page"),
+//      ),
+//      body: Center(
+//        child: Text("${Provider.of<Counter>(context, listen: false).count}"),
+//      ),
+//      floatingActionButton: FloatingActionButton(
+//        onPressed: (){
+//          Provider.of<Counter>(context, listen: false).increment();
+//        },
+//        child: Icon(Icons.add),
+//      ),
+//    );
+//  }
+//}
 
 class HttpPage extends StatelessWidget {
   @override
