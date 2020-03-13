@@ -18,16 +18,36 @@ class _MyHomePageState extends State<MyHomePage> {
           style: TextStyle(fontSize: 28.0),
         ),
       ),
-      body: Center(
-        child: RaisedButton(
-          onPressed: (){
-            Navigator.pushNamed(context, '/first');
-          },
-          child: Text(
-            'Jump to First',
-            style: TextStyle(fontSize: 28.0),
+      body: Column(
+        children: <Widget>[
+          RaisedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, '/first');
+            },
+            child: Text(
+              'Jump to First',
+              style: TextStyle(fontSize: 28.0),
+            ),
           ),
-        ),
+          RaisedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, '/poetry');
+            },
+            child: Text(
+              'Jump to Poetry',
+              style: TextStyle(fontSize: 28.0),
+            ),
+          ),
+          RaisedButton(
+            onPressed: (){
+              Navigator.pushNamed(context, '/gesture');
+            },
+            child: Text(
+              'Jump to Gesture',
+              style: TextStyle(fontSize: 28.0),
+            ),
+          ),
+        ],
       ),
     );
   }

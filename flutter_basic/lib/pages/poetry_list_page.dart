@@ -23,7 +23,7 @@ class _PoetryListPageState extends State<PoetryListPage> {
 
   void getPoetries() async {
     var url = 'http://localhost:8000/poetry/getPoetries';
-//    var formData = {'poetryId': '111'};
+    var formData = {'type': 2};
 
     await request(url).then((value){
 
@@ -48,11 +48,13 @@ class _PoetryListPageState extends State<PoetryListPage> {
       ),
       child: Row(
         children: <Widget>[
-          Column(
-            children: <Widget>[
-              _poetryName(newList, index),
-              _poetryContent(newList, index),
-            ],
+          Expanded(
+            child: Column(
+              children: <Widget>[
+                _poetryName(newList, index),
+                _poetryContent(newList, index),
+              ],
+            ),
           ),
         ],
       ),
@@ -76,17 +78,21 @@ class _PoetryListPageState extends State<PoetryListPage> {
     return Container(
       margin: EdgeInsets.only(top: 20.0),
       width: 400,
-      child: Row(
-        children: <Widget>[
-          Text(
-            '${newList[index].content}',
-            style: TextStyle(
-                color: Colors.orange,
-                fontSize: 18
+      child:
+        Row(
+          children: <Widget>[
+            Expanded(
+              child: Text(
+                ''''${newList[index].content}''',
+                style: TextStyle(
+                    color: Colors.orange,
+                    fontSize: 18
+                ),
+//                softWrap: true,
+              ),
             ),
-          ),
-        ],
-      ),
+          ],
+        ),
     );
   }
 

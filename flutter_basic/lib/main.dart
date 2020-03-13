@@ -7,6 +7,7 @@ import 'pages/poetry_list_page.dart';
 import 'pages/login.dart';
 import 'pages/Route.dart';
 import 'pages/Scenery.dart';
+import 'pages/dismisible.dart';
 
 void main() => runApp(MyApp());
 
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      home: SceneryPage(),
+      home: MyHomePage(),
       title: 'Examples',
       theme: ThemeData(
         primarySwatch: Colors.orange,
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
         '/first': (BuildContext context) => FirstPage(),
         'second': (BuildContext context) => SecondPage(),
         '/home': (BuildContext context) => MyHomePage(),
+        '/poetry': (BuildContext context) => PoetryListPage(),
+        '/gesture': (BuildContext context) => GesturePage()
       },
 //      initialRoute: '/first',
     );
