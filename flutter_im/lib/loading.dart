@@ -19,7 +19,7 @@ class _LoadingState extends State<LoadingPage> {
 
     Future.delayed(Duration(seconds: 3), (){
       print("Future im app is displaying...");
-//      Navigator.of(context).pushReplacementNamed("app")
+      Navigator.of(context).pushReplacementNamed("app");
     });
   }
 

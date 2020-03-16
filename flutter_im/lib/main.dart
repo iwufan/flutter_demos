@@ -8,9 +8,18 @@ void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
   title: '聊天室',
   theme: mDefaultTheme,
-//  routes: <String, WidgetBuilder> {
-//    "app": (BuildContext context) => App
-//  }
+  routes: <String, WidgetBuilder> {
+    "app": (BuildContext context) => App(),
+    "/friends": (_) => WebviewScaffold(
+      url: "https://baidu.com",
+      appBar: AppBar(
+        title: Text("百度 官网"),
+      ),
+      withZoom: true,
+      withLocalStorage: true,
+    ),
+    'search': (BuildContext context) => Search(),
+  },
   home: LoadingPage(),
 ));
 

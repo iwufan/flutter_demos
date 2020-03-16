@@ -47,25 +47,26 @@ flutter:
   - images/loading.jpeg
   - images/contact_list_normal.png
   - images/contact_list_pressed.png
-  - images/icon_add.png
+#  - images/icon_add.png
   - images/icon_addfriend.png
   - images/icon_groupchat.png
   - images/icon_me_clear.png
   - images/icon_me_file.png
   - images/icon_me_friends.png
-  - images/icon_me_messagepng
+  - images/icon_me_message.png
   - images/icon_me_photo.png
   - images/icon_me_service.png
   - images/icon_menu_addfriend.png
   - images/icon_menu_group.png
   - images/icon_menu_scan.png
   - images/icon_public.png
-  - images/icon_search.png
+#  - images/icon_search.png
   - images/message_normal.png
   - images/message_pressed.png
   - images/profile_normal.png
   - images/profile_pressed.png
   - images/yixiu.jpeg
+  - images/code.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
