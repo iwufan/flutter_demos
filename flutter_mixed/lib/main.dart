@@ -65,6 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.orange,
             onPressed: (){
               print('click dio');
+              Application.router.navigateTo(context, Routes.dioPage, transition: TransitionType.inFromRight);
             },
           ),
           FlatButton(
@@ -87,30 +88,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           FlatButton(
             child: Text(
-              'fluro',
-            ),
-            color: Colors.orange,
-            onPressed: (){
-              print('click fluro');
-            },
-          ),
-          FlatButton(
-            child: Text(
-              'flutter_html',
-            ),
-            color: Colors.orange,
-            onPressed: (){
-              print('click flutter_html');
-              Application.router.navigateTo(context, Routes.htmlPage, transition: TransitionType.inFromRight);
-            },
-          ),
-          FlatButton(
-            child: Text(
               'date_format',
             ),
             color: Colors.orange,
             onPressed: (){
               print('click date_format');
+              Application.router.navigateTo(context, Routes.dateFormatPage, transition: TransitionType.inFromRight);
             },
           ),
           FlatButton(
@@ -136,20 +119,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           FlatButton(
             child: Text(
-              'http',
-            ),
-            color: Colors.orange,
-            onPressed: (){
-              print('click http');
-            },
-          ),
-          FlatButton(
-            child: Text(
               'string_validator',
             ),
             color: Colors.orange,
             onPressed: (){
               print('click string_validator');
+              Application.router.navigateTo(context, Routes.stringValidatorPage, transition: TransitionType.inFromRight);
             },
           ),
         ],
