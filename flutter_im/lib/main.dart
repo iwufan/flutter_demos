@@ -11,9 +11,9 @@ void main() => runApp(MaterialApp(
   routes: <String, WidgetBuilder> {
     "app": (BuildContext context) => App(),
     "/friends": (_) => WebviewScaffold(
-      url: "https://baidu.com",
+      url: "https://www.google.com/?gws_rd=ssl",
       appBar: AppBar(
-        title: Text("百度 官网"),
+        title: Text("google"),
       ),
       withZoom: true,
       withLocalStorage: true,

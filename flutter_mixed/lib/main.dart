@@ -1,6 +1,8 @@
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
 import 'routes.dart';
+import 'package:provider/provider.dart';
+import 'providers/kid_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -8,13 +10,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => KidProvider(),),
+      ],
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: MyHomePage(title: 'Flutter Demo Home Page'),
 //      onGenerateRoute: Application.router.generator,
+      ),
     );
   }
 }
@@ -75,6 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.orange,
             onPressed: (){
               print('click provider');
+              Application.router.navigateTo(context, Routes.providerPage, transition: TransitionType.inFromRight);
             },
           ),
           FlatButton(
@@ -103,6 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
             color: Colors.orange,
             onPressed: (){
               print('click flutter_webview_plugin');
+              Application.router.navigateTo(context, Routes.webviewPage, transition: TransitionType.inFromRight);
             },
           ),
           FlatButton(
