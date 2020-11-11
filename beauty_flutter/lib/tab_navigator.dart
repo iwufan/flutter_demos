@@ -44,7 +44,7 @@ class _TabNavigatorState extends State<TabNavigator> {
           _bottomItem('本周', Icons.folder, 0),
           _bottomItem('分享', Icons.explore, 1),
           _bottomItem('免费', Icons.donut_small, 2),
-          _bottomItem('长按', Icons.person, 3),
+          _bottomItem('长安', Icons.person, 3),
         ],
         // selectedLabelStyle: TextStyle(color: _activeColor, fontSize: 12),
         // unselectedLabelStyle: TextStyle(color: _defaultColor, fontSize: 12),
