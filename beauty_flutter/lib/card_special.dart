@@ -8,6 +8,12 @@ class CardSpecial extends BaseCard {
 
 class _CardSpecialState extends BaseCardState {
   @override
+  void initState() {
+    bottomTitleColor = Colors.blue;
+    super.initState();
+  }
+
+  @override
   topContent() {
     return Column(
       children: <Widget>[
@@ -58,11 +64,41 @@ class _CardSpecialState extends BaseCardState {
                     Color(0xffecd9ae),
                   ]),
                 ),
+                child: Text(
+                  '分享免费领',
+                  style: TextStyle(color: Color(0xff4f3b1a), fontSize: 13),
+                ),
               )
             ],
           ),
         )
       ],
     );
+  }
+
+  @override
+  bottomContent() {
+    return Expanded(
+        child: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.network(
+                'http://www.devio.org/io/flutter_beauty/double_quotes.jpg',
+                height: 26,
+                width: 26,
+              ),
+              Text('揭露历史真相')
+            ],
+          ),
+        ),
+        bottomTitle('更多免费好书领不停 >')
+      ],
+    ));
   }
 }
